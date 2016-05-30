@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>图片墙</title>
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+    <!--  <link rel="icon" href="../img/favicon.ico" sizes="16x16 32x32"> -->
+  <style type="text/css">
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/vendor/eageTpian.css"> -->
+    <!-- <script src="../js/lib/jquery.min.js"></script> -->
+    <style type="text/css">
+    .scorll {
+      width: 100%;
+      height: 100%;
+    }
+    .img-list {
+      width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+	<section id="pibWall" class="pibWall">
+    <div class="scorll">
+      <ul class="img-list" id="img-list">
+        <li class="l-smallpic">
+            <a class="pic-box"><img src="../img/z-1.png"></a>
+        </li>   
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-3.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-2.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-3.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-4.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-1.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-2.png"></a></li>
+      </ul>
+    </div>
+    <div id="flaga" style="position: fixed; height: .4rem; background: pink; bottom: 0; right: 0; left: 0; text-align: center; color: #fff;"></div>
+	</section>
+<script type="text/javascript">
+    window.onscroll = function () {  
+        var top = document.documentElement.scrollTop || document.body.scrollTop; 
+        var screenH = window.screen.availHeight;
+        var textHeight = document.body.scrollHeight;
+        /*console.log("document.body.clientHeight: "+document.body.clientHeight);
+        console.log("document.body.offsetHeight: "+document.body.offsetHeight);
+        console.log("document.body.scrollHeight: "+document.body.scrollHeight);
+        console.log("window.screenTop: "+window.screenTop);
+        console.log("window.screen.height: "+window.screen.height);
+        console.log("window.screen.availHeight: "+window.screen.availHeight);
+        console.log(top+screenH, textHeight);*/
+        if(textHeight + 40 <= top + screenH) {
+            console.log(top, screenH);
+            var fk = document.getElementById("flaga");
+            fk.textContent = top+screenH;
+        }
+    };
+    function sliderWrap(obj) {
+        var _body = document.getElementsByTagName('body')[0];
+        _body.style.overflow = "hidden";
+        var _wrap = document.createElement("div");
+        _wrap.className = "J_wrap";
+        _wrap.style.background = "#000";
+        _wrap.style.position = "fixed";
+        _wrap.style.top = 0;
+        _wrap.style.right = 0;
+        _wrap.style.bottom = 0;
+        _wrap.style.left = 0;
+        _wrap.style.lineHeight = window.screen.height - 40 + "px";
+        _body.appendChild(_wrap);
+        var _wrapconten = document.createElement("div");
+        _wrapconten.className = "J_wrap-content";
+        _wrapconten.style.position= "relative";
+        _wrapconten.style.top= "0px";
+        _wrapconten.style.left= "0px";
+        _wrapconten.style.width= "3375px";
+        _wrapconten.style.height= window.screen.height - 40 + "px";
+        _wrapconten.style.transform= "translate(0px, 0px) translateZ(0px)";
+        _wrapconten.style.transition= "all 0.3s ease-out";
+        _wrap.appendChild(_wrapconten);
+        
+        fileWrapImg(obj);
+    };
+    function fileWrapImg(obj) {
+        console.log(obj);
+        for(var i = 0; i < obj.length; i++) {
+            var _wrapcontent = document.getElementsByClassName("J_wrap-content")[0];
+            console.log(_wrapcontent);
+            var _wrapitem = document.createElement("div");
+            _wrapitem.className = "J_wrap_item";
+            _wrapitem.style.width = window.screen.width + "px";
+            _wrapitem.style.height= window.screen.height - 40 + "px";
+            _wrapitem.style.float= "left";
+            _wrapcontent.appendChild(_wrapitem);
+            var _wrapimg = document.createElement("img");
+            _wrapimg.src = "http://d.hiphotos.baidu.com/zhidao/pic/item/1ad5ad6eddc451da72a3dc7bb6fd5266d11632cd.jpg";
+            _wrapimg.style.maxWidth = "100%";
+            _wrapimg.style.verticalAlign = "middle";
+            _wrapitem.appendChild(_wrapimg);
+        }
+        slideScreen();
+    }
+    function slideScreen() {
+        var _wrapcontent = document.getElementsByClassName("J_wrap-content");
+        console.log(_wrapitem);
+        _wrapcontent.addEventListener('touchstart', startTouch);
+    }
+    function startTouch() {
+        console.log('hello');
+    }
+    var slideWrap = document.getElementsByClassName("l-smallpic");
+    
+    for(var i = 0; i < slideWrap.length; i++) {
+        slideWrap[i].onclick = function() {
+            console.log('hi');
+            sliderWrap(slideWrap);
+        }
+    }
+</script>
+</body>
+</html>

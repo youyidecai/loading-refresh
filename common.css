@@ -1,0 +1,134 @@
+/*general start*/
+body,p,blockquote,figure,hr,h1,h2,h3,h4,h5,h6,ul,menu,dir,ol,dl,dd,fieldset,input[type=radio],input[type=checkbox],input[type=range],pre,xmp,plaintext,listing {
+    margin: 0;
+}
+
+input[type=search],input[type=button],input[type=submit],input[type=reset]{
+	 -webkit-appearance: none; 
+}
+
+cite,var,address,em {
+    font-style: normal;
+}
+
+strong {
+    font-weight: 400;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,iframe {
+    border: 0;
+}
+
+ol,ul {
+    list-style: none;
+}
+
+li:hover{
+	cursor: pointer;
+}
+
+input,textarea,select,button {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    margin: 0;
+}
+
+select,button,input {
+    color: inherit;
+}
+
+html {
+    -webkit-text-size-adjust: none;
+}
+
+html {
+    font-size: 100px;
+}
+
+body {
+    font: 14px/1.5 Arial, "Microsoft Yahei";  /**字体大小 * 行边距 = 行高**/
+    min-width: 320px;
+    max-width: 480px;
+    margin: 0 auto !important;
+    color: #333;
+    position: relative;
+    overflow-x: hidden;
+	  background: #fff;
+}
+
+a{
+    color: #333;
+}
+
+em {
+    font-style: normal;
+}
+.clearfix{
+    zoom:1;
+}
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+header {
+    margin-top: .15rem;
+    margin-left: .15rem;
+}
+
+header img,
+header .title{
+    float: left;
+}
+
+header img {
+    border-radius: .15rem
+}
+
+@media only all and (max-width: 640px) {
+  header .title {
+    width: 2rem;
+  }
+}
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
+
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone5 */ 
+
+}
+@media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 */
+
+}
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone6 Plus */
+
+}
+
+nav {
+    margin-top: .15rem;
+    margin-bottom: .03rem;
+    text-align: center;
+}
+footer {
+    padding: 10px 0px;
+    bottom: 0px;
+    z-index: 1;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+}
+

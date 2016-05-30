@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>图片墙sdsd</title>
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+  <link rel="icon" href="../img/favicon.ico" sizes="16x16 32x32">
+  <style type="text/css">
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/vendor/eageTpian.css">
+    <script src="../js/lib/jquery.min.js"></script>
+    <style type="text/css">
+    .scorll {
+      width: 100%;
+      height: 100%;
+    }
+    .img-list {
+      width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+	<section id="pibWall" class="pibWall">
+    <div class="scorll">
+      <ul class="img-list" id="img-list">
+        <li class="l-smallpic">
+            <a class="pic-box"><img src="../img/z-1.png"></a>
+        </li>   
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-3.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-2.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-3.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-4.png"></a></li> 
+        <li class="l-smallpic"><a class="pic-box"><img src="../img/z-1.png"></a></li> 
+      </ul>
+    </div>
+    <div id="flaga" style="position: fixed; height: .4rem; background: pink; bottom: 0; right: 0; left: 0; text-align: center; color: #fff;"></div>
+	</section>
+  <script type="text/javascript">
+    window.onscroll = function () {  
+      
+            var top = document.documentElement.scrollTop || document.body.scrollTop; 
+            var screenH = window.screen.availHeight;
+            var textHeight = document.body.scrollHeight;
+            console.log("document.body.clientHeight: "+document.body.clientHeight);
+            console.log("document.body.offsetHeight: "+document.body.offsetHeight);
+            console.log("document.body.scrollHeight: "+document.body.scrollHeight);
+            console.log("window.screenTop: "+window.screenTop);
+            console.log("window.screen.height: "+window.screen.height);
+            console.log("window.screen.availHeight: "+window.screen.availHeight);
+            console.log(top+screenH, textHeight);
+            if(textHeight + 40 <= top + screenH) {
+            console.log(top, screenH);
+            var fk = document.getElementById("flaga");
+            fk.textContent = top+screenH;
+            
+              //console.log(window.screen.availHeight);
+            }
+            
+        };
+  </script>
+</body>
+</html>
